@@ -35,7 +35,7 @@ API keys for the global cloud can be obtained from your [Global DocuSeal Console
 ```python
 from docuseal import docuseal
 
-docuseal.key = 'API_KEY'
+docuseal.key = "API_KEY"
 ```
 
 #### EU Cloud
@@ -45,8 +45,8 @@ API keys for the EU cloud can be obtained from your [EU DocuSeal Console](https:
 ```python
 from docuseal import docuseal
 
-docuseal.key = 'API_KEY'
-docuseal.url = 'https://api.docuseal.eu'
+docuseal.key = "API_KEY"
+docuseal.url = "https://api.docuseal.eu"
 ```
 
 #### On-Premises
@@ -56,8 +56,8 @@ For on-premises installations, API keys can be retrieved from the API settings p
 ```python
 from docuseal import docuseal
 
-docuseal.key = 'API_KEY'
-docuseal.url = 'https://yourdocusealapp.com/api'
+docuseal.key = "API_KEY"
+docuseal.url = "https://yourdocusealapp.com/api"
 ```
 
 ## API Methods
@@ -97,12 +97,12 @@ This API endpoint allows you to create signature requests (submissions) for a do
 
 ```python
 docuseal.create_submission({
-  'template_id': 1000001,
-  'send_email': True,
-  'submitters': [
+  "template_id": 1000001,
+  "send_email": True,
+  "submitters": [
     {
-      'role': 'First Party',
-      'email': 'john.doe@example.com'
+      "role": "First Party",
+      "email": "john.doe@example.com"
     }
   ]
 })
@@ -117,8 +117,8 @@ This API endpoint allows you to create submissions for a document template and s
 
 ```python
 docuseal.create_submission_from_emails({
-  'template_id': 1000001,
-  'emails': 'hi@docuseal.com, example@docuseal.com'
+  "template_id": 1000001,
+  "emails": "hi@docuseal.com, example@docuseal.com"
 })
 ```
 
@@ -167,11 +167,11 @@ Allows you to update submitter details, pre-fill or update field values and re-s
 
 ```python
 docuseal.update_submitter(500001, {
-  'email': 'john.doe@example.com',
-  'fields': [
+  "email": "john.doe@example.com",
+  "fields": [
     {
-      'name': 'First Name',
-      'default_value': 'Acme'
+      "name": "First Name",
+      "default_value": "Acme"
     }
   ]
 })
@@ -211,11 +211,11 @@ Provides the functionality to create a fillable document template for existing M
 
 ```python
 docuseal.create_template_from_docx({
-  'name': 'Test DOCX',
-  'documents': [
+  "name": "Test DOCX",
+  "documents": [
     {
-      'name': 'string',
-      'file': 'base64'
+      "name": "string",
+      "file": "base64"
     }
   ]
 })
@@ -233,7 +233,7 @@ Provides the functionality to seamlessly generate a PDF document template by uti
 
 ```python
 docuseal.create_template_from_html({
-  'html': """<p>Lorem Ipsum is simply dummy text of the
+  "html": """<p>Lorem Ipsum is simply dummy text of the
 <text-field
   name=\"Industry\"
   role=\"First Party\"
@@ -242,7 +242,7 @@ docuseal.create_template_from_html({
 </text-field>
 and typesetting industry</p>
 """,
-  'name': 'Test Template'
+  "name": "Test Template"
 })
 ```
 
@@ -255,11 +255,11 @@ Allows you to merge multiple templates with documents and fields into a new comb
 
 ```python
 docuseal.merge_templates({
-  'template_ids': [
+  "template_ids": [
     321,
     432
   ],
-  'name': 'Merged Template'
+  "name": "Merged Template"
 })
 ```
 
@@ -275,21 +275,21 @@ Provides the functionality to create a fillable document template for existing P
 
 ```python
 docuseal.create_template_from_pdf({
-  'name': 'Test PDF',
-  'documents': [
+  "name": "Test PDF",
+  "documents": [
     {
-      'name': 'string',
-      'file': 'base64',
-      'fields': [
+      "name": "string",
+      "file": "base64",
+      "fields": [
         {
-          'name': 'string',
-          'areas': [
+          "name": "string",
+          "areas": [
             {
-              'x': 0,
-              'y': 0,
-              'w': 0,
-              'h': 0,
-              'page': 1
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "page": 1
             }
           ]
         }
@@ -308,7 +308,7 @@ Allows you to clone existing template into a new template.
 
 ```python
 docuseal.clone_template(1000001, {
-  'name': 'Cloned Template'
+  "name": "Cloned Template"
 })
 ```
 
@@ -321,8 +321,8 @@ Provides the functionality to move a document template to a different folder and
 
 ```python
 docuseal.update_template(1000001, {
-  'name': 'New Document Name',
-  'folder_name': 'New Folder'
+  "name": "New Document Name",
+  "folder_name": "New Folder"
 })
 ```
 
@@ -335,9 +335,9 @@ Allows you to add, remove or replace documents in the template with provided PDF
 
 ```python
 docuseal.update_template_documents(1000001, {
-  'documents': [
+  "documents": [
     {
-      'file': 'string'
+      "file": "string"
     }
   ]
 })
@@ -352,6 +352,15 @@ Allows you to archive a document template.
 
 ```python
 docuseal.archive_template(1000001)
+```
+
+### Configuring Timeouts
+
+Set timeouts to avoid hanging requests:
+
+```ruby
+docuseal.open_timeout = 30
+docuseal.read_timeout = 30
 ```
 
 ## Support
