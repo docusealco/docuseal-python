@@ -2,14 +2,13 @@ from docuseal._http import DocusealHttp
 
 
 class DocusealApi:
-    def __init__(self, key=None, url="https://api.docuseal.com", config=None):
-        if config is None:
-            config = {}
-
-        self.config = config
+    def __init__(self, key=None, url="https://api.docuseal.com", read_timeout=60, open_timeout=60):
+        self.config = {}
 
         self.config["key"] = key
         self.config["url"] = url
+        self.config["read_timeout"] = read_timeout
+        self.config["open_timeout"] = open_timeout
 
         self.http = DocusealHttp(self.config)
 
@@ -31,7 +30,7 @@ class DocusealApi:
 
     @property
     def read_timeout(self):
-        return self.config.get("read_timeout")
+        return self.config["read_timeout"]
 
     @read_timeout.setter
     def read_timeout(self, value):
@@ -39,7 +38,7 @@ class DocusealApi:
 
     @property
     def open_timeout(self):
-        return self.config.get("open_timeout")
+        return self.config["open_timeout"]
 
     @open_timeout.setter
     def open_timeout(self, value):

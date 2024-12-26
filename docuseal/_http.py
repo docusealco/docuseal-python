@@ -55,7 +55,7 @@ class DocusealHttp:
 
     def headers(self):
         return {
-            "X-Auth-Token": self.config.get("key", ""),
+            "X-Auth-Token": self.config["key"] or "",
             "Content-Type": "application/json",
             "User-Agent": f"DocuSeal Python v{VERSION}",
         }
