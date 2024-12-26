@@ -2,8 +2,8 @@ from setuptools import setup
 
 setup(
     name='docuseal',
-    version='1.0.0',
-    description='A example Python package',
+    version='1.0.1',
+    description='DocuSeal Python API client',
     url='https://github.com/docusealco/docuseal-python',
     author='DocuSeal',
     author_email='admin@docuseal.com',
