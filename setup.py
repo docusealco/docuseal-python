@@ -1,8 +1,9 @@
 from setuptools import setup
+from pathlib import Path
 
 setup(
     name='docuseal',
-    version='1.0.1',
+    version='1.0.2',
     description='DocuSeal Python API client',
     url='https://github.com/docusealco/docuseal-python',
     author='DocuSeal',
@@ -12,6 +13,8 @@ setup(
     packages=['docuseal'],
     install_requires=[],
     python_requires=">=3.6",
+    long_description_content_type='text/markdown',
+    long_description=(Path(__file__).parent/"README.md").read_text(),
     project_urls={
         "Bug Tracker": "https://github.com/docuseaoco/docuseal-python/issues",
         "Changes": "https://github.com/docuseaoco/docuseal-python/blob/master/CHANGELOG.md",
