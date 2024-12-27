@@ -3,7 +3,7 @@ from pathlib import Path
 
 setup(
     name='docuseal',
-    version='1.0.2',
+    version='1.0.3',
     description='DocuSeal Python API client',
     url='https://github.com/docusealco/docuseal-python',
     author='DocuSeal',
@@ -16,10 +16,10 @@ setup(
     long_description_content_type='text/markdown',
     long_description=(Path(__file__).parent/"README.md").read_text(),
     project_urls={
-        "Bug Tracker": "https://github.com/docuseaoco/docuseal-python/issues",
-        "Changes": "https://github.com/docuseaoco/docuseal-python/blob/master/CHANGELOG.md",
+        "Bug Tracker": "https://github.com/docusealco/docuseal-python/issues",
+        "Changes": "https://github.com/docusealco/docuseal-python/blob/master/CHANGELOG.md",
         "Documentation": "https://www.docuseal.com/docs/api?lang=python",
-        "Source Code": "https://github.com/docuseaoco/docuseal-python",
+        "Source Code": "https://github.com/docusealco/docuseal-python",
     },
     classifiers=[
         "Development Status :: 5 - Production/Stable",
