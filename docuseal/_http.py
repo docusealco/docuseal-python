@@ -30,7 +30,13 @@ class DocusealHttp:
         if params is None:
             params = {}
 
-        url = urllib.parse.urljoin(self.config["url"], path)
+        base_url = self.config["url"]
+
+        if not base_url.endswith('/'):
+            base_url += '/'
+
+        url = urllib.parse.urljoin(base_url, "." + path)
+
         full_path = f"{url}{self.to_query(params)}"
 
         parsed_url = urllib.parse.urlparse(full_path)
