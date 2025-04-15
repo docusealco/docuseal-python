@@ -84,6 +84,17 @@ Provides the functionality to retrieve information about a submission.
 docuseal.get_submission(1001)
 ```
 
+### get_submission_documents(id)
+
+[Documentation](https://www.docuseal.com/docs/api?lang=python#get-submission-documents)
+
+This endpoint returns a list of partially filled documents for a submission. If the submission has been completed, the final signed documents are returned.
+
+
+```python
+docuseal.get_submission_documents(1001)
+```
+
 ### create_submission(data)
 
 [Documentation](https://www.docuseal.com/docs/api?lang=python#create-a-submission)

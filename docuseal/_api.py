@@ -91,6 +91,11 @@ class DocusealApi:
             params = {}
         return self.http.get(f"/submissions/{submission_id}", params)
 
+    def get_submission_documents(self, submission_id, params=None):
+        if params is None:
+            params = {}
+        return self.http.get(f"/submissions/{submission_id}/documents", params)
+
     def create_submission(self, data):
         return self.http.post("/submissions/init", data)
 
