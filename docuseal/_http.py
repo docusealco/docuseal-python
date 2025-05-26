@@ -69,7 +69,8 @@ class DocusealHttp:
     def to_query(self, params):
         if not params:
             return ""
-        return f"?{urllib.parse.urlencode(params)}"
+
+        return f"?{urllib.parse.urlencode({k: str(v).lower() if isinstance(v, bool) else v for k, v in params.items()})}"
 
     def handle_response(self, response):
         response_body = response.read().decode("utf-8")
