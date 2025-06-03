@@ -3,7 +3,7 @@ from pathlib import Path
 
 setup(
     name='docuseal',
-    version='1.0.6',
+    version='1.0.7',
     description='DocuSeal Python API client',
     url='https://github.com/docusealco/docuseal-python',
     author='DocuSeal',
