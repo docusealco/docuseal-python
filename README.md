@@ -123,7 +123,7 @@ docuseal.create_submission({
 
 [Documentation](https://www.docuseal.com/docs/api?lang=python#create-a-submission-from-pdf)
 
-Provides the functionality to create one-off submission request from a PDF file. Use `{{Field Name;role=Signer1;type=date}}` text tags to define fillable fields in the document. See [https://www.docuseal.com/examples/fieldtags.pdf](https://www.docuseal.com/examples/fieldtags.pdf) for more text tag formats. Or specify the exact pixel coordinates of the document fields using `fields` param.
+Provides the functionality to create one-off submission request from a PDF. Use `{{Field Name;role=Signer1;type=date}}` text tags to define fillable fields in the document. See [https://www.docuseal.com/examples/fieldtags.pdf](https://www.docuseal.com/examples/fieldtags.pdf) for more text tag formats. Or specify the exact pixel coordinates of the document fields using `fields` param.
 
 **Related Guides:**<br>
 [Use embedded text field tags to create a fillable form](https://www.docuseal.com/guides/use-embedded-text-field-tags-in-the-pdf-to-create-a-fillable-form)
@@ -131,7 +131,7 @@ Provides the functionality to create one-off submission request from a PDF file.
 
 ```python
 docuseal.create_submission_from_pdf({
-  "name": "Test PDF",
+  "name": "Test Submission Document",
   "documents": [
     {
       "name": "string",
@@ -161,6 +161,37 @@ docuseal.create_submission_from_pdf({
 })
 ```
 
+### create_submission_from_docx(data)
+
+[Documentation](https://www.docuseal.com/docs/api?lang=python#create-a-submission-from-docx)
+
+Provides functionality to create a one-off submission request from a DOCX file with dynamic content variables. Use `[[variable_name]]` text tags to define dynamic content variables in the document. See [https://www.docuseal.com/examples/demo\_template.docx](https://www.docuseal.com/examples/demo_template.docx) for the specific text variable syntax, including dynamic content tables and list. You can also use the `{{signature}}` fillable field syntax to define fillable fields, as in a PDF.
+
+**Related Guides:**<br>
+[Use embedded text field tags to create a fillable form](https://www.docuseal.com/guides/use-embedded-text-field-tags-in-the-pdf-to-create-a-fillable-form)
+
+
+```python
+docuseal.create_submission_from_docx({
+  "name": "Test Submission Document",
+  "variables": {
+    "variable_name": "value"
+  },
+  "documents": [
+    {
+      "name": "string",
+      "file": "base64"
+    }
+  ],
+  "submitters": [
+    {
+      "role": "First Party",
+      "email": "john.doe@example.com"
+    }
+  ]
+})
+```
+
 ### create_submission_from_html(data)
 
 [Documentation](https://www.docuseal.com/docs/api?lang=python#create-a-submission-from-html)
@@ -173,7 +204,7 @@ This API endpoint allows you to create a one-off submission request document usi
 
 ```python
 docuseal.create_submission_from_html({
-  "name": "Test PDF",
+  "name": "Test Submission Document",
   "documents": [
     {
       "name": "Test Document",
