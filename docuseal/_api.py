@@ -111,6 +111,9 @@ class DocusealApi:
     def create_submission_from_docx(self, data):
         return self.http.post("/submissions/docx", data)
 
+    def update_submission(self, submission_id, data):
+        return self.http.put(f"/submissions/{submission_id}", data)
+
     def archive_submission(self, submission_id):
         return self.http.delete(f"/submissions/{submission_id}")
 

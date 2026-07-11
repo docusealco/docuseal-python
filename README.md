@@ -228,6 +228,21 @@ and typesetting industry</p>
 })
 ```
 
+### update_submission(id, data)
+
+[Documentation](https://www.docuseal.com/docs/api?lang=python#update-a-submission)
+
+Allows you to update a submission: change its name, expiration date, and archive or unarchive it.
+
+
+```python
+docuseal.update_submission(1001, {
+  "name": "New Submission Name",
+  "expire_at": "2024-09-01 12:00:00 UTC",
+  "archived": True
+})
+```
+
 ### archive_submission(id)
 
 [Documentation](https://www.docuseal.com/docs/api?lang=python#archive-a-submission)
