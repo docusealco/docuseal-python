@@ -254,7 +254,7 @@ Allows you to archive a submission.
 docuseal.archive_submission(1001)
 ```
 
-### list_submissions(params)
+### list_submitters(params)
 
 [Documentation](https://www.docuseal.com/docs/api?lang=python#list-all-submitters)
 
@@ -262,12 +262,13 @@ Provides the ability to retrieve a list of submitters.
 
 
 ```python
-docuseal.list_submissions({ "limit": 10 })
+docuseal.list_submitters({ "limit": 10 })
 ```
 
 ### get_submitter(id)
 
 [Documentation](https://www.docuseal.com/docs/api?lang=python#get-a-submitter)
+
 
 Provides functionality to retrieve information about a submitter, along with the submitter documents and field values.
 
@@ -283,7 +284,7 @@ docuseal.get_submitter(500001)
 Allows you to update submitter details, pre-fill or update field values and re-send emails.
 
 **Related Guides:**<br>
-[Automatically sign documents via API](https://www.docuseal.com/guides/pre-fill-pdf-document-form-fields-with-api#automatically_sign_documents_via_api)
+[Automatically sign documents via API](https://www.docuseal.com/guides/pre-fill-pdf-document-form-fields-with-api#automatically-sign-documents-via-api)
 
 
 ```python
@@ -298,7 +299,7 @@ docuseal.update_submitter(500001, {
 })
 ```
 
-### list_submissions(params)
+### list_templates(params)
 
 [Documentation](https://www.docuseal.com/docs/api?lang=python#list-all-templates)
 
@@ -306,7 +307,7 @@ Provides the ability to retrieve a list of available document templates.
 
 
 ```python
-docuseal.list_submissions({ "limit": 10 })
+docuseal.list_templates({ "limit": 10 })
 ```
 
 ### get_template(id)
@@ -358,7 +359,7 @@ docuseal.create_template_from_pdf({
 
 ### create_template_from_docx(data)
 
-[Documentation](https://www.docuseal.com/docs/api?lang=python#create-a-template-from-word-docx)
+[Documentation](https://www.docuseal.com/docs/api?lang=python#create-a-template-from-docx)
 
 Provides the functionality to create a fillable document template for an existing Microsoft Word document. Use `{{Field Name;role=Signer1;type=date}}` text tags to define fillable fields in the document. See [https://www.docuseal.com/examples/fieldtags.docx](https://www.docuseal.com/examples/fieldtags.docx) for more text tag formats. Or specify the exact pixel coordinates of the document fields using `fields` param.
 
